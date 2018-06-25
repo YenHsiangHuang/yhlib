@@ -33,4 +33,4 @@ public:
     Node* partition(Node* head, int d);
 };
 
-#endif
+#endif  // LIST_H
