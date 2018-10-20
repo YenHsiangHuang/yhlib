@@ -1,8 +1,8 @@
 #include "singlylinkedlist.h"
 #include <unordered_set>
 
-/*
- * Add
+/**
+   Add
  */
 void Node::append(int d) {
     Node* end = this;
@@ -12,16 +12,16 @@ void Node::append(int d) {
     end->next = new Node(d);
 }
 
-/*
- * Copy / Move
+/**
+   Copy / Move
  */
 void Node::copyFrom(const Node* incoming) {
     this->data = incoming->data;
     this->next = incoming->next;
 }
 
-/*
- * Delete
+/**
+   Delete
  */
 void Node::deleteNodeAfter(Node* prevNode) {
     prevNode->next = this->next;
@@ -84,8 +84,8 @@ void Node::removeDupInPlace(Node* head) {
     }
 }
 
-/*
- * Edit
+/**
+   Edit
  */
 Node* Node::partition(Node* head, int d) {
     if (head == nullptr || head->next == nullptr) return head;
@@ -108,34 +108,32 @@ Node* Node::partition(Node* head, int d) {
 
     return head;
 
-
     /*
      * The following code provides a method with same time complexity
      * But we have to hold four variables to keep tracking of two linked lists
      */
-    //if (head == nullptr || head->next == nullptr) return head;
+    // if (head == nullptr || head->next == nullptr) return head;
 
-    //Node dummyRight, dummyLeft;
-    //Node* dummyRightHead = &dummyRight;
-    //Node* dummyLeftHead = &dummyLeft;
-    //Node* rightNode = dummyRightHead;
-    //Node* leftNode = dummyLeftHead;
+    // Node dummyRight, dummyLeft;
+    // Node* dummyRightHead = &dummyRight;
+    // Node* dummyLeftHead = &dummyLeft;
+    // Node* rightNode = dummyRightHead;
+    // Node* leftNode = dummyLeftHead;
 
-    //Node* node = head;
-    //while (node != nullptr) {
-        //if (node->data >= d) {
-            //rightNode->next = node;
-            //rightNode = rightNode->next;
-        //} else {
-            //leftNode->next = node;
-            //leftNode = leftNode->next;
-        //}
-        //node = node->next;
+    // Node* node = head;
+    // while (node != nullptr) {
+    // if (node->data >= d) {
+    // rightNode->next = node;
+    // rightNode = rightNode->next;
+    //} else {
+    // leftNode->next = node;
+    // leftNode = leftNode->next;
+    //}
+    // node = node->next;
     //}
 
-    //leftNode->next = dummyRightHead->next;
-    //rightNode->next = nullptr;
+    // leftNode->next = dummyRightHead->next;
+    // rightNode->next = nullptr;
 
-
-    //return dummyLeftHead->next;
+    // return dummyLeftHead->next;
 }
