@@ -1,4 +1,4 @@
-#include "matlab.h"
+#include "matlab.hpp"
 #include <random>
 
 namespace {

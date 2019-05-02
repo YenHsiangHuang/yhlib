@@ -24,7 +24,7 @@ class Timer {
 
    private:
     std::string message;
-    std::shared_ptr<TimerData> data;
+    std::shared_ptr< TimerData > data;
 };
 
 // Tic-toc as in Matlab

@@ -1,4 +1,4 @@
-#include "timer.h"
+#include "timer.hpp"
 #include <iostream>
 
 void printDuration(std::chrono::system_clock::duration& t,
@@ -76,5 +76,6 @@ void tictocHelper(const Caller caller, const TimeMode& timeMode,
             std::cout << "[" << ttd->message << " : \t";
             printDuration(diffTime, storedTimeMode);
             std::cout << "]" << std::endl;
+            break;
     }
 }

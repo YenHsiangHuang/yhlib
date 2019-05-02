@@ -1,4 +1,4 @@
-#include "mathematical.h"
+#include "mathematical.hpp"
 
 /**
    Sourse:

@@ -1,7 +1,7 @@
 #include <vector>
 #include <memory>   // smart pointer
 #include <utility>  // swap
-#include "deckofcards.h"
+#include "deckofcards.hpp"
 using namespace std;
 
 // ****************************************************************************
