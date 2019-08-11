@@ -9,15 +9,15 @@ Deck::Deck() {
     nCard = 52;
     card.clear();
     card.resize(nCard);
-    for (int i = 0; i <= 12; i++) card[13*0+i] = make_shared<Card> (i+1, Spade);
-    for (int i = 0; i <= 12; i++) card[13*1+i] = make_shared<Card> (i+1, Heart);
-    for (int i = 0; i <= 12; i++) card[13*2+i] = make_shared<Card> (i+1, Diamond);
-    for (int i = 0; i <= 12; i++) card[13*3+i] = make_shared<Card> (i+1, Club);
+    for (int i = 0; i <= 12; i++) card[13*0 + i] = make_shared< Card > (i + 1, Spade);
+    for (int i = 0; i <= 12; i++) card[13*1 + i] = make_shared< Card > (i + 1, Heart);
+    for (int i = 0; i <= 12; i++) card[13*2 + i] = make_shared< Card > (i + 1, Diamond);
+    for (int i = 0; i <= 12; i++) card[13*3 + i] = make_shared< Card > (i + 1, Club);
 }
 
-shared_ptr<Card> Deck::deal() {
+shared_ptr< Card > Deck::deal() {
     if (card.size() == 0) return nullptr;
-    shared_ptr<Card> tmp = card.back();
+    shared_ptr< Card > tmp = card.back();
     card.pop_back();
     dbg_printf("deal %d\n", tmp->faceVal);
     return tmp;
@@ -38,7 +38,7 @@ void Deck::shuffle() {
 
 // ****************************************************************************
 
-int Player::addCard(shared_ptr<Card> newCard) {
+int Player::addCard(shared_ptr< Card > newCard) {
     hand.push_back(newCard);
     return updateScore(newCard);
 }
@@ -66,7 +66,7 @@ int Player::updateScore() {
     return score;
 }
 
-int Player::updateScore(shared_ptr<Card> newCard) {
+int Player::updateScore(shared_ptr< Card > newCard) {
     if (newCard->faceVal == 1) return updateScore();
     if (newCard->faceVal  > 9) score += 10;
     else                       score += newCard->faceVal;
